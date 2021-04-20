@@ -27,7 +27,10 @@ def delete_rois(conn):
         result = conn.getRoiService().findByImage(img.id, None)
         to_delete = []
         for roi in result.rois:
-            to_delete.append(roi.getId().getValue())
+            for s in roi.copyShapes():
+                if type(s) == omero.model.RectangleI:
+                    to_delete.append(roi.getId().getValue())
+                    break
         if to_delete:
             print(f"Deleting existing {len(to_delete)} rois on image {img.name}.")
             conn.deleteObjects("Roi", to_delete, deleteChildren=True, wait=True)
@@ -80,6 +83,9 @@ def main(conn):
                 s = rmatch.group(1)
                 # 150309_m610_m405.nd2 [150309_m610_m405.nd2 (series 01)]
                 img_name = f"{img_name}.nd2 [{img_name}.nd2 (series {s})]"
+                if not "150414_m116" in img_name: # testing: just do one image for now
+                    print(f"({i}/1706003)")
+                    continue
                 t_from = int(rmatch.group(2))
                 x = int(rmatch.group(3))
                 y = int(rmatch.group(4))
