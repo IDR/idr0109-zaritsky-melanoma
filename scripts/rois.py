@@ -19,7 +19,7 @@ H = 256
 # Generated with:
 # /uod/idr/filesets/idr0109-zaritsky-melanoma/20210408-ftp/ROI>
 # find * -type f -name "*.png" >> /tmp/rois.txt
-roipaths = "/tmp/rois.txt"
+roipaths = "/uod/idr/metadata/idr0109-zaritsky-melanoma/scripts/rois.txt"
 
 
 def delete_rois(conn):

@@ -7,7 +7,7 @@ from omero.gateway import BlitzGateway
 from omero_rois import mask_from_binary_image
 from skimage.io import imread
 
-maskpaths = "/tmp/masks.txt"
+maskpaths = "/uod/idr/metadata/idr0109-zaritsky-melanoma/scripts/masks.txt"
 
 DATASET_ID = 13801
 DELETE_ROIS = True
