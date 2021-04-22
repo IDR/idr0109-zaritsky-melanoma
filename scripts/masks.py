@@ -5,15 +5,15 @@ import re
 import omero
 from omero.gateway import BlitzGateway
 from omero_rois import mask_from_binary_image
+from omero.rtypes import rdouble
 from skimage.io import imread
+import numpy as np
 
 maskpaths = "/uod/idr/metadata/idr0109-zaritsky-melanoma/scripts/masks.txt"
 
 DATASET_ID = 13801
 DELETE_ROIS = True
 DRYRUN = False
-W = 256
-H = 256
 
 
 def delete_rois(conn):
@@ -21,10 +21,12 @@ def delete_rois(conn):
     result = conn.getRoiService().findByImage(img.id, None)
     to_delete = []
     for roi in result.rois:
-      for s in roi.copyShapes():
+      try:
+        s = roi.copyShapes()[0]
         if type(s) == omero.model.MaskI:
           to_delete.append(roi.getId().getValue())
-          break
+      except Exception as e:
+        print(e)
     if to_delete:
       print(f"Deleting existing {len(to_delete)} masks on image {img.name}.")
       conn.deleteObjects("Roi", to_delete, deleteChildren=True, wait=True)
@@ -32,25 +34,32 @@ def delete_rois(conn):
 
 def create_mask(mask_path, x_offset, y_offset, t, text):
   try:
-    mask = mask_from_binary_image(imread(mask_path), rgba=(255, 255, 255, 128),
+    mask_data = imread(mask_path)
+    mask_data = np.invert(mask_data)
+    h, w = mask_data.shape[0], mask_data.shape[1]
+    mask = mask_from_binary_image(mask_data, rgba=(255, 255, 255, 128),
                                   t=t, text=text)
-    mask.setX(mask.getX().getValue()+x_offset)
-    mask.setY(mask.getY().getValue()+y_offset)
+    mask.setX(rdouble(mask.getX().getValue()+x_offset-w/2))
+    mask.setY(rdouble(mask.getY().getValue()+y_offset-h/2))
     roi = omero.model.RoiI()
     roi.addShape(mask)
     return roi
-  except:
+  except Exception as e:
     print(f"Mask creation failed for {mask_path}")
+    print(e)
     return None
 
 
 def save_mask(roi, img, conn):
   us = conn.getUpdateService()
-  roi.setImage(img)
+  roi.setImage(img._obj)
   return us.saveAndReturnObject(roi)
 
 
 def main(conn):
+  if not DRYRUN and DELETE_ROIS:
+    delete_rois(conn)
+
   # example file name:
   # /.../mask/na/m116/150414_m116/22-Feb-2018_m116_s12_t60_x736_y1467_t212/MASK_22-Feb-2018_m116_s12_t60_x736_y1467_t212_t7Ready_f00111.tif
   FORMAT = "mask/(.+)/(.+)/(.+)/.+/(.+)"
@@ -78,15 +87,9 @@ def main(conn):
         s = rmatch.group(1)
         # 150414_m116.nd2 [150414_m116.nd2 (series 01)]
         img_name = f"{img_name}.nd2 [{img_name}.nd2 (series {s})]"
-        if not "150414_m116" in img_name: # testing: just do one image for now
-          print(f"({i}/1706003)")
-          continue
         t_from = int(rmatch.group(2))
         x = int(rmatch.group(3))
         y = int(rmatch.group(4))
-        # x,y seems to be the center of the ROI
-        x -= W/2
-        y -= H/2
         t_to = int(rmatch.group(5))
         t_inc = int(rmatch.group(6))
         t = t_from + t_inc
