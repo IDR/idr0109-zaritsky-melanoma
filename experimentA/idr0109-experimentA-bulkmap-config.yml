@@ -1,0 +1,52 @@
+---
+name: idr0109-zaritsky-melanoma/experimentA
+version: 1
+
+defaults:
+  include: no
+  type: string
+  includeclient: yes
+  visible: yes
+  omitempty: yes
+
+columns:
+
+  - name: Experimental Condition [Cell Origin]
+    clientname: Cell Origin
+    include: yes
+
+  - name: Experimental Condition [Cell Type]
+    clientname: Cell Type
+    include: yes
+
+  - name: Experimental Condition [PDX Metastatic Efficiency]
+    clientname: PDX Metastatic Efficiency
+    include: yes
+
+  - name: Comment [Experiment Date]
+    clientname: Experiment Date
+    include: yes
+
+  - name: Comment [Series Location]
+    clientname: Series Location
+    include: yes
+
+
+  ######################################################################
+  # mapr groups
+  ######################################################################
+
+  - group:
+      namespace: openmicroscopy.org/mapr/organism
+      columns:
+        - name: Characteristics [Organism]
+          clientname: Organism
+          include: yes
+
+
+advanced:
+  ignore_missing_primary_key: yes
+  primary_group_keys:
+    - namespace: openmicroscopy.org/mapr/organism
+      keys:
+        - Organism
