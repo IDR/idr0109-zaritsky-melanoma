@@ -31,6 +31,10 @@ columns:
     clientname: Series Location
     include: yes
 
+  - name: Comment [Image File Comment]
+    clientname: Image File Comment
+    include: yes
+
 
   ######################################################################
   # mapr groups
