@@ -52,7 +52,7 @@ Comment[IDR Experiment Name]	idr0109-zaritsky-melanoma/experimentA
 
 
 Experiment Sample Type	cell																								
-Experiment Description	Live melanoma single cell phase contrast imaging with multiple labels: cell category (PDX, cell line, melanocyte, clonal expansion), PDX metastatic efficency (high, low, unknown), cell type (e.g., A375, MV3, m405). 																								
+Experiment Description	Live melanoma single cell phase contrast imaging with multiple labels: cell category (PDX, cell line, melanocyte, clonal expansion), PDX metastatic efficiency (high, low, unknown), cell type (e.g. A375, MV3, m405). 																								
 Experiment Size	5D Images: 12,000 single cells; 1,700,000 raw single cell images 	Average Image Dimension (XYZCT):	Total Tb: 5.5TB																									
 Experiment Example Images																							
 Experiment Imaging Method	phase contrast microscopy																							
@@ -84,7 +84,7 @@ Protocol Description	Cell cultures were grown on polystyrene tissue culture dish
 # Phenotypes																																	
 Phenotype Name	Pseudopodial extensions	light scattering 																							
 Phenotype Description	Subtle pseudopodial extensions / increased light scattering for high metastatic cells. Was determined by in silico amplification of cell properties associated with metastatic efficiency using generative neural networks.  																							
-Phenotype Score Type	Insilico cell images were generated automatically, phenotype interpretation was performed manually																						
+Phenotype Score Type	In silico cell images were generated automatically, phenotype interpretation was performed manually																						
 Phenotype Term Source REF		CMPO																							
 Phenotype Term Name																																				
 Phenotype Term Accession																																																															
