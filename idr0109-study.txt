@@ -1,0 +1,111 @@
+# FILL IN AS MUCH INFORMATION AS YOU CAN.  HINTS HAVE BEEN PUT IN SOME FIELDS AFTER THE HASH # SYMBOL. REPLACE THE HINT WITH TEXT WHERE APPROPRIATE.
+
+# STUDY DESCRIPTION SECTION
+
+# Section with generic information about the study including title, description, publication details (if applicable) and contact details																						
+Comment[IDR Study Accession]	idr0109																								
+Study Title	Interpretable deep learning uncovers cellular properties in label-free live cell images that are predictive of highly-metastatic melanoma																							
+Study Type	time-lapse imaging																								
+Study Type Term Source REF	OMIT																							
+Study Type Term Accession	OMIT_0027490																						
+Study Description	Deep learning has emerged as the technique of choice for identifying hidden patterns in cell imaging data, but is often criticized as ‘black-box’. Here, we demonstrate that a generative neural network captures subtle details of cell appearance, which permit the prediction of the metastatic efficiency of patient-derived melanoma xenografts with known clinical outcomes. To probe the predictor, we used the network to generate “in-silico” cell images that amplified the critical predictive cellular features. These images unveiled pseudopodial extensions and increased light scattering as hallmark properties of metastatic cells. We validated this interpretation using live cells spontaneously transitioning between states indicative of low and high metastatic efficiency. This study illustrates how the application of Artificial Intelligence can support the identification of cellular properties that are predictive of complex phenotypes and integrated cell functions, but are too subtle to be identified in the raw imagery by a human expert. 																							
+Study Key Words	live cell imaging	phase contrast microscopy	machine learning	deep learning	autoencoder	melanoma	cancer	metastasis																							
+Study Organism	Homo sapiens																							
+Study Organism Term Source REF	NCBITaxon																							
+Study Organism Term Accession	9606																							
+Study Experiments Number	1																									
+Study External URL	https://github.com/DanuserLab/openLCH																										
+Study BioImage Archive Accession
+																				
+Study Public Release Date	2021-05-31																																																					
+# Study Publication																								
+Study PubMed ID																								
+Study Publication Title	Interpretable deep learning uncovers cellular properties in label-free live cell images that are predictive of highly-metastatic melanoma																								
+Study Author List	Zaritsky A, Jamieson AR, Welf ES, Nevarez A, Cillay J, Eskiocak U, Cantarel BL, Danuser G																							
+Study PMC ID																								
+Study DOI
+																																														
+# Study Contacts																								
+Study Person Last Name	Zaritsky	Danuser																							
+Study Person First Name	Assaf	Gaudenz																						
+Study Person Email	assafza@bgu.ac.il	gaudenz.Danuser@utsouthwestern.edu																						
+Study Person Address	Department of Software and Information Systems Engineering, Ben-Gurion University of the Negev, Beer-Sheva 84105, Israel	Department of Bioinformatics, UT Southwestern Medical Center, Dallas, TX 75390, USA																							
+Study Person ORCID	0000-0002-1477-5478	0000-0001-8583-2014																						
+Study Person Roles	corresponding author	corresponding author																																																	
+# Study License and Data DOI																									
+Study License	CC BY 4.0																							
+Study License URL	https://creativecommons.org/licenses/by/4.0/																									
+Study Copyright	Zaritsky et al																									
+Study Data Publisher	University of Dundee																						
+Study Data DOI																								
+Term Source Name		NCBITaxon	EFO	CMPO	Fbbi																				
+Term Source File		http://purl.obolibrary.org/obo/	http://www.ebi.ac.uk/efo/	http://www.ebi.ac.uk/cmpo/	http://purl.obolibrary.org/obo/														
+
+										
+
+
+# EXPERIMENT SECTION
+
+# Experiment Section containing all information relative to each experiment in the study including materials used, protocols names and description, phenotype names and description. For multiple experiments this section should be repeated.  Copy and paste the whole section below and fill out for the next experiment																										
+Experiment Number	1																							
+Comment[IDR Experiment Name]	idr0109-zaritsky-melanoma/experimentA
+
+
+Experiment Sample Type	cell																								
+Experiment Description	Live melanoma single cell phase contrast imaging with multiple labels: cell category (PDX, cell line, melanocyte, clonal expansion), PDX metastatic efficency (high, low, unknown), cell type (e.g., A375, MV3, m405). 																								
+Experiment Size	5D Images: 12,000 single cells; 1,700,000 raw single cell images 	Average Image Dimension (XYZCT):	Total Tb: 5.5TB																									
+Experiment Example Images																							
+Experiment Imaging Method	phase contrast microscopy																							
+Experiment Imaging Method Term Source REF	FBbi																						
+Experiment Imaging Method Term Accession	FBbi_00000247																					
+Experiment Comments	All cell were treated and imaged in the same fashion.	Observing for cell type/category/metastatic efficiency.  							
+
+
+
+
+#  assay Files		
+
+
+Experiment Assay File	assayFile_27APR2021.txt																												
+Experiment Assay File Format	tab-delimited text																							
+Assay Experimental Conditions	individually tracked cell ROI (256x256)																									
+Assay Experimental Conditions Term Source REF
+
+
+Assay Experimental Conditions Term Accession												
+
+Quality Control Description																																																					
+# Protocols																								
+Protocol Name	growth protocol	treatment protocol	image acquisition and feature extraction protocol	data analysis protocol																													
+Protocol Type	growth protocol	treatment protocol	image acquisition and feature extraction protocol	data analysis protocol																													
+Protocol Type Term Source REF	EFO	EFO																															
+Protocol Type Term Accession	EFO_0003789	EFO_0003969																						
+Protocol Description	Cell cultures were grown on polystyrene tissue culture dishes to confluence at 37°C and 5% CO2. Melanoma cells derived from murine PDX models were gifts from Sean Morrison (UT Southwestern Medical Center, Dallas, TX) and cultured in medium containing the Melanocyte Growth Kit and Dermal Cell Basal Medium from ATCC. Primary melanocytes were obtained from ATCC (PCS-200-013) and grown in medium containing the Melanocyte Growth Kit and Dermal Cell Basal Medium from ATCC. The m116 melanocytes, a gift from J. Shay (UT Southwestern Medical Center, Dallas), were derived from fetal foreskin and were cultured in medium 254 (Fisher). A375 cells were obtained from ATCC (CRL-1619). SK-Mel2 cells were obtained from ATCC (HTB-68). MV3 cells were a gift from Peter Friedl (MD Anderson Cancer Center, Houston, TX). MV3 and A375 cells were cultured in DMEM with 10% FBS. WM3670, WM1361, and WM1366 were obtained directly from the Wistar Institute and cultured in the recommended medium (80% MCDB1653, 20%, 2% FBS, CaCl2 and bovine insulin).																																													
+# Phenotypes																																	
+Phenotype Name	Pseudopodial extensions	light scattering 																							
+Phenotype Description	Subtle pseudopodial extensions / increased light scattering for high metastatic cells. Was determined by in silico amplification of cell properties associated with metastatic efficiency using generative neural networks.  																							
+Phenotype Score Type	Insilico cell images were generated automatically, phenotype interpretation was performed manually																						
+Phenotype Term Source REF		CMPO																							
+Phenotype Term Name																																				
+Phenotype Term Accession																																																															
+# Feature Level Data Files													
+Feature Level Data File Name	featureDataTable_ROI_15APR2021.txt
+
+
+Feature Level Data File Format	tab-delimited																							
+Feature Level Data File Description	Summary of autoencoder-based features extracted from individually tracked cell ROIs.																											
+Feature Level Data Column Name	cellType	metEff	date	expStr	locationStr	frame	ts	xs	ys	imageFileNameROI	imageFilePathROI	rawImageSourceFile	rawSourceImagePath	embedding_1	embedding_2	embedding_3	embedding_4	embedding_5	embedding_6	embedding_7	embedding_8	embedding_9	embedding_10	embedding_11	embedding_12	embedding_13	embedding_14	embedding_15	embedding_16	embedding_17	embedding_18	embedding_19	embedding_20	embedding_21	embedding_22	embedding_23	embedding_24	embedding_25	embedding_26	embedding_27	embedding_28	embedding_29	embedding_30	embedding_31	embedding_32	embedding_33	embedding_34	embedding_35	embedding_36	embedding_37	embedding_38	embedding_39	embedding_40	embedding_41	embedding_42	embedding_43	embedding_44	embedding_45	embedding_46	embedding_47	embedding_48	embedding_49	embedding_50	embedding_51	embedding_52	embedding_53	embedding_54	embedding_55	embedding_56				embedding_2					embedding_3					embedding_4					embedding_5					embedding_6					embedding_7					embedding_8		embedding_9					embedding_10				embedding_11				embedding_12				embedding_13				embedding_14				embedding_15				embedding_16				embedding_17embedding_18					embedding_19				embedding_20				embedding_21				embedding_22				embedding_23				embedding_24				embedding_25				embedding_26				embedding_27	embedding_28				embedding_29				embedding_30				embedding_31				embedding_32				embedding_33				embedding_34				embedding_35				embedding_36embedding_37					embedding_38				embedding_39				embedding_40				embedding_41				embedding_42				embedding_43				embedding_44				embedding_45				embedding_46	embedding_47				embedding_48				embedding_49				embedding_50				embedding_51				embedding_52				embedding_53				embedding_54				embedding_55embedding_56
+
+
+Feature Level Data Column Description	cell type	metastatic efficiency status	date of experiment	experiment id string	location in nd2 image file	frame	time from original image series	x position of cell from the source .nd2 image	y position of cell from the source .nd2 image	name of image file used for feature extraction	image file path (relative)	source nd2 image file name	source nd2 image file path (relative)	[56 embedding vectors/featrures extracted]	
+
+
+																															
+#  Processed Data Files													
+Processed Data File Name	ImageFileTable_roiMask_15APR2021																							
+Processed Data File Format	tab-delimited text																						
+Processed Data File Description	Individually tracked cell ROI binary segmentation mask (256x256).																							
+Processed Data Column Name	cellType	metEff	date	expStr	locationStr	frame	ts	xs	ys	imageFileNameMask	imageFilePathMask	rawImageSourceFile	rawSourceImagePath																						
+Processed Data Column Type																							
+Processed Data Column Annotation Level																								
+Processed Data Column Description	cell type	metastatic efficiency status	date of experiment	experiment id string	location in nd2 image file	frame	time from original image series	x position of cell from the source .nd2 image	y position of cell from the source .nd2 image	name of image file for ROI mask	mask file path (relative)	source nd2 image file name	source nd2 image file path (relative)		
