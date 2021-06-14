@@ -4,7 +4,7 @@
 
 # Section with generic information about the study including title, description, publication details (if applicable) and contact details																						
 Comment[IDR Study Accession]	idr0109																								
-Study Title	Interpretable deep learning uncovers cellular properties in label-free live cell images that are predictive of highly-metastatic melanoma																							
+Study Title	Interpretable deep learning uncovers cellular properties in label-free live cell images that are predictive of highly metastatic melanoma																							
 Study Type	time-lapse imaging																								
 Study Type Term Source REF	OMIT																							
 Study Type Term Accession	OMIT_0027490																						
@@ -19,11 +19,11 @@ Study BioImage Archive Accession
 																				
 Study Public Release Date	2021-05-31																																																					
 # Study Publication																								
-Study PubMed ID																								
-Study Publication Title	Interpretable deep learning uncovers cellular properties in label-free live cell images that are predictive of highly-metastatic melanoma																								
+Study PubMed ID	34077708																							
+Study Publication Title	Interpretable deep learning uncovers cellular properties in label-free live cell images that are predictive of highly metastatic melanoma																								
 Study Author List	Zaritsky A, Jamieson AR, Welf ES, Nevarez A, Cillay J, Eskiocak U, Cantarel BL, Danuser G																							
 Study PMC ID																								
-Study DOI
+Study DOI	https://doi.org/10.1016/j.cels.2021.05.003
 																																														
 # Study Contacts																								
 Study Person Last Name	Zaritsky	Danuser																							
@@ -37,7 +37,7 @@ Study License	CC BY 4.0
 Study License URL	https://creativecommons.org/licenses/by/4.0/																									
 Study Copyright	Zaritsky et al																									
 Study Data Publisher	University of Dundee																						
-Study Data DOI																								
+Study Data DOI	https://doi.org/10.17867/10000161																								
 Term Source Name		NCBITaxon	EFO	CMPO	Fbbi																				
 Term Source File		http://purl.obolibrary.org/obo/	http://www.ebi.ac.uk/efo/	http://www.ebi.ac.uk/cmpo/	http://purl.obolibrary.org/obo/														
 
